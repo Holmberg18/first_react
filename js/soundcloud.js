@@ -1,5 +1,8 @@
-import React from 'react';
-import ReactDOM  from 'react-dom';
+// import React from 'react';
+// import ReactDOM  from 'react-dom';
+
+var React = require('react');
+var ReactDOM = require('react-dom');
 
 function SoundCloudEmbed(props) {
     const playerUrl = 'https://w.soundcloud.com/player/';
