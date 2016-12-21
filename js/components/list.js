@@ -16,6 +16,9 @@ var List = function(props) {
 			 <div className="cards">
                 <div className="title">{props.title}</div>
 				<div className="cards">{cardComponent}</div>
+				<form>
+				  <input type="text" name="firstname"><br>
+				</form>
              </div>
 			 );
 
