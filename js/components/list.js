@@ -1,60 +1,33 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Card = require('./card');
+import NameForm from './name-form'
 
 var List = function(props) {
+
+	var cardComponent;
+	
+			if (props.cards){
+			 cardComponent = props.cards.map(function(item,index){
+				return (
+					<Card text = {item} key={index} />
+					
+				);
+			
+			 });//end for
+			}
 	
 	
-	 var cardComponent = props.cards.map(function(item,index){
-		return (
-			<Card text = {item} key={index} />
+	return (
+	<div>
+		{cardComponent}
+		<NameForm />
+	</div>
 		);
-	
-	 });
-	 
-class NameForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
-
-  render() {
-    return (
-   <div className="cards">
-                 <div className="title">{props.title}</div>
-				 <div className="cards">{cardComponent}</div>
-				 <form>
-				   <input type="text" name="firstname" onAddInputChanged=""><br>
-				   <input type="submit" value="Submit">
-				 </form>
-				 </div>
-    ); // end return
-  } //end render
-} //end NameForm
-}; // end List
-
-module.exports = List;
 
 
-return (
-			 // <div className="cards">
-                // <div className="title">{props.title}</div>
-				// <div className="cards">{cardComponent}</div>
-				// <form>
-				  // <input type="text" name="firstname" onAddInputChanged=""><br>
-				  // <input type="submit" value="Submit">
-				// </form>
-             // </div>
-			 // );
+
+}//end List
+
+export default List;
+
