@@ -8,10 +8,8 @@ import List from './components/list';
 
 
 
-document.addEventListener('DOMContentLoaded', () =>
-	event.preventDefault()
-    ReactDOM.render(<List />, document.getElementById('app'))
-);
+document.addEventListener('DOMContentLoaded', function() {ReactDOM.render(<List />, document.getElementById('app'))
+});
 
 
 
