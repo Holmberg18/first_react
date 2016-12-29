@@ -42,3 +42,4 @@ render(){
 }//end List Container
 
 export default ListContainer;
+//Next make the Board component that will render three lists to view progress and finished state

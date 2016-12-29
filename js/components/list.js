@@ -29,3 +29,6 @@ var List = function(props) {
 }//end List
 
 export default List;
+
+
+//Next make the Board component that will render three lists to view progress and finished state
