@@ -2,7 +2,8 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 
 
-export default class NameForm extends React.Component {
+
+export default class NameForm extends React.Component {//calling action from other components via propsr
 	
   constructor(props) {
     super(props);
@@ -13,12 +14,12 @@ export default class NameForm extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.props.onInput(event);
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
+    this.props.onSubmit(event);
   }
 
   render() {
