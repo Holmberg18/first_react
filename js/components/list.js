@@ -32,14 +32,17 @@ class NameForm extends React.Component {
 
   render() {
     return (
-   <div className="cards">
+    <div className="cards">
                  <div className="title">{props.title}</div>
 				 <div className="cards">{cardComponent}</div>
-				 <form>
-				   <input type="text" name="firstname" onAddInputChanged=""><br>
-				   <input type="submit" value="Submit">
-				 </form>
-				 </div>
+				  <form onSubmit={this.handleSubmit}>
+					<label>
+					  Name:
+					  <input type="text" value={this.state.value} onChange={this.handleChange} />
+					</label>
+					<input type="submit" value="Submit" />
+				  </form>
+	</div>
     ); // end return
   } //end render
 } //end NameForm
@@ -47,14 +50,3 @@ class NameForm extends React.Component {
 
 module.exports = List;
 
-
-return (
-			 // <div className="cards">
-                // <div className="title">{props.title}</div>
-				// <div className="cards">{cardComponent}</div>
-				// <form>
-				  // <input type="text" name="firstname" onAddInputChanged=""><br>
-				  // <input type="submit" value="Submit">
-				// </form>
-             // </div>
-			 // );
