@@ -4,11 +4,11 @@
 import React from 'react';
 import ReactDOM  from 'react-dom';
 
-import ListContainer from './components/list-container';
+import Board from './components/board';
 
 
 
-document.addEventListener('DOMContentLoaded', function() {ReactDOM.render(<ListContainer />, document.getElementById('app'))
+document.addEventListener('DOMContentLoaded', function() {ReactDOM.render(<Board />, document.getElementById('app'))
 });
 
 

@@ -2,37 +2,30 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var List = require('./list');
 var Card = require('./card');
+var ListContainer = require('./list-container');
 
-var Board = function(props) {
-var cardsList = ['card1','card2']	
-	
-var listComponent = props.lists.map(function(item,index){
-	
+class Board extends React.Component {
+      constructor(props) {
+      super(props);
+      this.state = {value: ''};
+
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+
+render(){
+
 	return (
-			<List title = {item} cards= {cardsList} key={index} />
-			
-			
-	);
-	
-	
-});
-
-// var cardComponent = props.cards.map(function(item){
-	
-	// return (
-			
-
-	// );
-	
-// }};
-
-
-  return (
-            <div>
-			 <div className="title">{props.title}</div>
-			 <div className="Lists">{listComponent}</div>
-            </div>
-        );
-};
+	<div>
+		<ListContainer />
+	</div>
+		);
+}//end render
+    
+    
+} // end board
 
 module.exports = Board;
+
+//Next make the Board component that will render three lists to view progress and finished state
