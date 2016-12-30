@@ -2,34 +2,31 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Card = require('./card');
 
+
 var List = function(props) {
+  
+	var cardComponent;
+	
+			if (props.cards){
+			 cardComponent = props.cards.map(function(item,index){
+				return (
+					<Card text = {item} key={index} />
+					
+				);
+			
+			 });//end for
+			}
 	
 	
-	 var cardComponent = props.cards.map(function(item,index){
-		return (
-			<Card text = {item} key={index} />
+	return (
+	<div>
+		{cardComponent}
+		
+	</div>
 		);
-	
-	 });
-	 
-class NameForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
-
+<<<<<<< HEAD
   render() {
     return (
     <div className="cards">
@@ -47,6 +44,14 @@ class NameForm extends React.Component {
   } //end render
 } //end NameForm
 }; // end List
+=======
+}//end List
+>>>>>>> cf35fe3ce6e5d9fd75c27276a137763f69521938
 
-module.exports = List;
+export default List;
 
+<<<<<<< HEAD
+=======
+
+//Next make the Board component that will render three lists to view progress and finished state
+>>>>>>> cf35fe3ce6e5d9fd75c27276a137763f69521938

@@ -1,6 +1,7 @@
 // import React from 'react';
 // import ReactDOM  from 'react-dom';
 
+<<<<<<< HEAD
 var React = require('react');
 var ReactDOM = require('react-dom');
 var List = require('js/list.js');
@@ -48,3 +49,18 @@ document.addEventListener('DOMContentLoaded', () =>
         // );
     // }
 // }
+=======
+import React from 'react';
+import ReactDOM  from 'react-dom';
+
+import Board from './components/board';
+
+
+
+document.addEventListener('DOMContentLoaded', function() {ReactDOM.render(<Board />, document.getElementById('app'))
+});
+
+
+
+//Next make the Board component that will render three lists to view progress and finished state
+>>>>>>> cf35fe3ce6e5d9fd75c27276a137763f69521938
