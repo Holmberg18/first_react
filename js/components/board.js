@@ -5,19 +5,12 @@ var Card = require('./card');
 var ListContainer = require('./list-container');
 
 class Board extends React.Component {
-      constructor(props) {
-      super(props);
-      this.state = {value: ''};
-
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-  }
 
 
 render(){
 
 	return (
-	<div>
+	<div class="board">
 		<ListContainer />
 	</div>
 		);
