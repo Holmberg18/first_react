@@ -32,6 +32,7 @@ render(){
 
 	return (
 	<div>
+        <h1>{this.props.title}</h1>
 		<List cards = {this.state.cards} />
         <NameForm onSubmit={this.onSubmit} onInput={this.onInput} />
 	</div>
