@@ -15,7 +15,7 @@ render(){
 
     
 	return (
-	<div>
+	<div className="board">
         <ListContainer title = "to do" />
         <ListContainer  title = "progress"/>
         <ListContainer title="done"/>
