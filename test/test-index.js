@@ -8,7 +8,7 @@ import Board from '../js/components/board';
 
 const should = chai.should();
 
-describe('trello component', function() {
+describe('Trello component', function() {
     it('Board renders the cards',  function() {
 
 
@@ -20,6 +20,18 @@ describe('trello component', function() {
         result.props.children[0].type.should.equal(ListContainer);
         result.props.children[0].props.title.should.equal('to do');
      
+    });
+    
+     it('ListContainer creates ListContainer component',  function() {
+
+
+        const renderer = TestUtils.createRenderer();
+        renderer.render(<ListContainer />);
+        const result = renderer.getRenderOutput();
+        result.props.className.should.equal('list-container');
+        result.type.should.equal('div');
+        result.props.children[0].type.should.equal("h1");
+        result.props.children[1].props.cards.should.equal('cards');
     });
     
      it('List creates list component',  function() {
@@ -41,9 +53,14 @@ describe('trello component', function() {
     });
 });
 
-describe('List component', function() {
-   
-});
+
+
+
+
+
+//describe('List component', function() {
+//   
+//});
 //
 //describe('Card component', function() {
 //    it('Creates card component',  function() {
