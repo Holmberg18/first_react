@@ -31,7 +31,7 @@ import NameForm from './name-form';
 render(){
 
 	return (
-	<div class="list-container">
+	<div className="list-container">
         <h1>{this.props.title}</h1>
 		<List cards = {this.state.cards} />
         <NameForm onSubmit={this.onSubmit} onInput={this.onInput} />

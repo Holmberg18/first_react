@@ -31,25 +31,36 @@ describe('Trello component', function() {
         result.props.className.should.equal('list-container');
         result.type.should.equal('div');
         result.props.children[0].type.should.equal("h1");
-        result.props.children[1].props.cards.should.equal('cards');
+        result.props.children[1].type.should.equal(List);
+        //result.props.children[1].props.cards.should.equal(state.cards);
+         
+        //ASK MARIO ABOUT THIS!!!!!
     });
     
      it('List creates list component',  function() {
 
 
         const renderer = TestUtils.createRenderer();
-        renderer.render(<Image url={url} description={description} />);
+        renderer.render(<List />);
         const result = renderer.getRenderOutput();
-        result.props.className.should.equal('gallery-image');
+        result.props.className.should.equal('list');
+        result.type.should.equal('div');
+  //      result.props.children.children.type.should.equal(Card);
+         //HOW DO YOU TEST THE TYPE OF 'CARD' IN CARDCOMPONENT???
+//      result.props.children[0].props.title.should.equal('to do');
+    });
+    
+         it('Card creates card component',  function() {
 
-        const img = result.props.children[0];
-        img.type.should.equal('img');
-        img.props.src.should.equal(url);
-        img.props.alt.should.equal(description);
 
-        const p = result.props.children[1];
-        p.type.should.equal('p');
-        p.props.children.should.equal(description);
+        const renderer = TestUtils.createRenderer();
+        renderer.render(<Card />);
+        const result = renderer.getRenderOutput();
+        result.props.className.should.equal('cards');
+        result.type.should.equal('div');
+        result.props.children[0].className.should.equal('text')
+//        result.props.children[0].className.should.equal('text');
+    
     });
 });
 

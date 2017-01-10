@@ -17,14 +17,11 @@ var List = function(props) {
 			 });//end for
 			}
 	
-	
 	return (
-	<div>
+	<div className="list">
 		{cardComponent}
-		
 	</div>
 		);
-
 
 }; // end List
 
