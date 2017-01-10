@@ -45,7 +45,7 @@ describe('Trello component', function() {
         const result = renderer.getRenderOutput();
         result.props.className.should.equal('list');
         result.type.should.equal('div');
-  //      result.props.children.children.type.should.equal(Card);
+       // result.props.children.children.type.should.equal(Card);
          //HOW DO YOU TEST THE TYPE OF 'CARD' IN CARDCOMPONENT???
 //      result.props.children[0].props.title.should.equal('to do');
     });
@@ -58,7 +58,9 @@ describe('Trello component', function() {
         const result = renderer.getRenderOutput();
         result.props.className.should.equal('cards');
         result.type.should.equal('div');
-        result.props.children[0].className.should.equal('text')
+        let cardChild = result.props.children[0];
+        cardChild.props.children.should.equal(text);
+        //result.props.children[0].className.should.equal('text')
 //        result.props.children[0].className.should.equal('text');
     
     });
