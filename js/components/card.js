@@ -5,7 +5,7 @@ var Card = function(props) {
 
     return (
             <div className="cards">
-                <div className="text">{props.text}</div>
+                <p className="text">{props.text}</p>
 			</div>
     );
 };

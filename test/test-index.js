@@ -59,6 +59,7 @@ describe('Trello component', function() {
         result.props.className.should.equal('cards');
         result.type.should.equal('div');
         let cardChild = result.props.children[0];
+//        console.log(cardChild);
         cardChild.props.children.should.equal(text);
         //result.props.children[0].className.should.equal('text')
 //        result.props.children[0].className.should.equal('text');
