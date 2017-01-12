@@ -50,7 +50,7 @@ describe('Trello component', function() {
 //      result.props.children[0].props.title.should.equal('to do');
     });
     
-         it('Card creates card component',  function() {
+         it('Card creates card component',  function(done) {
 
 
         const renderer = TestUtils.createRenderer();
@@ -58,9 +58,13 @@ describe('Trello component', function() {
         const result = renderer.getRenderOutput();
         result.props.className.should.equal('cards');
         result.type.should.equal('div');
-        let cardChild = result.props.children[0];
-//        console.log(cardChild);
-        cardChild.props.children.should.equal(text);
+        let cardChild = result.props.children;
+       // console.log(cardChild);
+        cardChild.type.should.equal('p');
+        cardChild.props.className.should.equal('text');
+//             console.log(cardChild);
+        done();//we use callback
+          
         //result.props.children[0].className.should.equal('text')
 //        result.props.children[0].className.should.equal('text');
     
@@ -69,7 +73,7 @@ describe('Trello component', function() {
 
 
 
-
+//@juansnow It looks like your component is expecting a "text" prop to be passed in. Maybe that relates //to the error? Also, try using console.log(result) and console.log(result.props) to see if your result //content matches what you expect.
 
 
 //describe('List component', function() {
